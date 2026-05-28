@@ -1,1 +1,337 @@
 
+/* ==========================================
+    1. 全体の基本設定 (Base Styles)
+========================================== */
+:root {
+    --primary-color: #2563eb; /* ブルー */
+    --primary-hover: #1d4ed8;
+    --bg-dark: #0f172a; /* ダークグレー */
+    --bg-light: #f8fafc; /* ライトグレー */
+    --text-main: #334155;
+    --text-light: #94a3b8;
+}
+
+html {
+    scroll-behavior: smooth; /* スクロールを滑らかに */
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 共通のコンテナサイズ */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================
+    2. ヘッダー (Header)
+========================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95); /* 少し透ける黒 */
+    backdrop-filter: blur(8px);
+    color: white;
+    z-index: 100;
+    border-bottom: 1px solid #1e293b;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.logo .material-symbols-outlined {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+    3. ヒーローセクション (トップ画面)
+========================================== */
+.hero {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 160px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 工業的なドットパターンの背景 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.hero-school {
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 24px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-desc {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ==========================================
+    4. セクション共通 (Sections)
+========================================== */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--bg-dark);
+    margin-bottom: 48px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================
+    5. 研究概要 (About)
+========================================== */
+.about-box {
+    background: white;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+    6. 特徴 (Features)
+========================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.feature-card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.feature-icon .material-symbols-outlined {
+    font-size: 28px;
+}
+
+/* アイコンの色分け */
+.icon-blue { background: #dbeafe; color: #2563eb; }
+.icon-green { background: #d1fae5; color: #059669; }
+.icon-purple { background: #f3e8ff; color: #7c3aed; }
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    color: var(--bg-dark);
+}
+
+.feature-card p {
+    color: #475569;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+    7. ブログリンク (Blog)
+========================================== */
+.blog-section {
+    text-align: center;
+    background-color: white;
+    padding: 100px 0;
+}
+
+.blog-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-dark);
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.blog-icon-wrap .material-symbols-outlined {
+    color: var(--primary-color);
+    font-size: 40px;
+}
+
+.blog-desc {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #475569;
+    font-size: 1.1rem;
+}
+
+.btn-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.btn-dark:hover {
+    background-color: #1e293b;
+    transform: scale(1.05);
+}
+
+.btn-dark:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================
+    8. フッター (Footer)
+========================================== */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 48px 0;
+    border-top: 1px solid #1e293b;
+}
+
+/* ==========================================
+    9. スマホ対応 (Responsive)
+========================================== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* スマホではメニューを隠す */
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* スマホでは縦1列 */
+    }
+    .about-box {
+        padding: 24px;
+    }
+}
