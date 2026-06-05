@@ -1,16 +1,16 @@
-"""body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    color: #2c3e50;
+    color: #333;
     background-color: #ffffff;
 }
 
 nav {
     background-color: #ffffff;
-    border-bottom: 1px solid #eee;
-    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -18,52 +18,49 @@ nav {
 }
 
 nav a {
-    color: #555;
+    color: #666;
     text-decoration: none;
     margin: 0 20px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #007aff;
+    color: #0056b3;
 }
 
 header {
-    padding: 100px 20px 60px;
+    padding: 80px 20px 40px;
     text-align: center;
-    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+    background-color: #f8f9fa;
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-size: 2.2rem;
+    color: #1a1a1a;
     margin-bottom: 10px;
 }
 
 main {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-section, article {
-    margin-bottom: 60px;
-}
-
 h2 {
-    border-left: 4px solid #007aff;
+    font-size: 1.5rem;
+    border-left: 5px solid #0056b3;
     padding-left: 15px;
-    font-weight: 400;
+    margin-bottom: 20px;
+    color: #1a1a1a;
 }
 
 footer {
-    margin-top: 100px;
-    padding: 40px 20px;
+    margin-top: 60px;
+    padding: 30px 20px;
     text-align: center;
     border-top: 1px solid #eee;
-    color: #999;
-    font-size: 0.9rem;
+    color: #888;
+    font-size: 0.85rem;
 }
-"""
