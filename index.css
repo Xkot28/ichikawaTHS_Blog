@@ -1,7 +1,167 @@
-body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; margin: 0; padding: 0; color: #333; background-color: #fcfcfc; }
-nav { background-color: #ffffff; border-bottom: 2px solid #0056b3; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; text-align: center; }
-nav a { color: #0056b3; text-decoration: none; margin: 0 15px; font-weight: bold; }
-header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #0056b3, #007bff); color: white; }
-main { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-h2 { border-left: 5px solid #0056b3; padding-left: 15px; color: #0056b3; }
-footer { text-align: center; padding: 20px; color: #888; font-size: 0.8rem; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    background: #fdfdfd;
+}
+
+/* Navigation Bar Styles (common for all sites) */
+nav {
+    background: #1a2a6c;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Header Styles (main site specific) */
+header {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Main Content Styles (main site specific) */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #1a2a6c;
+    border-bottom: 3px solid #1a2a6c;
+    padding-bottom: 10px;
+}
+
+/* Blog Specific Styles */
+.blog-body {
+    background: #f0f2f5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+}
+
+.blog-nav {
+    background: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+main#blog-list {
+    max-width: 700px; /* Increased max-width for blog posts */
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.post {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.post img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.date {
+    font-size: 0.85rem;
+    color: #777;
+    text-align: right;
+}
+
+/* Admin Tool Specific Styles */
+.admin-body {
+    background: #eef2f7;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.admin-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.admin-h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.admin-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.admin-input, .admin-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.admin-button {
+    width: 100%;
+    background: #4e73df;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.admin-button:hover {
+    background: #2e59d9;
+}
+
+/* Overwrite for blog index.html from build_blog.py*/
+.post-body { white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }
