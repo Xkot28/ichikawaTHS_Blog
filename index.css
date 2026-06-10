@@ -17,7 +17,7 @@ nav a {
 }
 
 .container {
-    max-width: 500px; /* Adjusted from 450px to 500px */
+    max-width: 400px; /* Adjusted from 500px to 400px */
     margin: 30px auto;
     padding: 0 20px;
 }
