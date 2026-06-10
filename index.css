@@ -41,9 +41,12 @@ nav a {
 }
 
 .post img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 500px; /* New: Limit image height */
+    object-fit: contain; /* New: Maintain aspect ratio and fit within bounds */
+    display: block; /* New: Allow margin auto to center */
+    margin: 15px auto; /* Adjusted: Center image horizontally */
     border-radius: 10px;
-    margin: 15px 0;
 }
 
 /* 改行を有効にする設定 */
