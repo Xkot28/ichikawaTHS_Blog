@@ -1,0 +1,31 @@
+name: Deploy Blog to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'posts/**'
+      - 'build_blog.py'
+      - 'index.css'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Build Blog Index
+        run: python build_blog.py
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: . # Deploy the current directory (which is the root of ichikawaTHS_Blog)
+          branch: gh-pages # The branch for GitHub Pages
