@@ -168,12 +168,12 @@ main#blog-list {
 
 .site-footer {
     margin-top: auto; /* 上の余白を自動計算し、フッターを一番下へ押しやる */
-    text-align: right; /* 右寄せにする */
+    text-align: center; /* 右寄せにする */
     padding: 20px;
     
     /* 背景色と文字色はお好みのものに変更してください */
-    background: #1a2a6c; 
-    color: white;
+    background: #fff; 
+    color: black;
 }
 /* Overwrite for blog index.html from build_blog.py*/
 .post-body { white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }
