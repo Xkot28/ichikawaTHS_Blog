@@ -69,6 +69,14 @@ main#blog-list {
     padding: 0 20px;
 }
 
+main#blog-list img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
 .post {
     background: white;
     border-radius: 15px;
@@ -208,4 +216,58 @@ main#blog-list {
 
 #back-to-top:hover {
     background: #b21f1f;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 0.5rem;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 56px 16px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main,
+    main#blog-list {
+        margin: 24px auto;
+        padding: 0 14px;
+    }
+
+    main#blog-list article {
+        margin-bottom: 28px !important;
+        padding-bottom: 16px !important;
+    }
+
+    main#blog-list h2 {
+        font-size: 1.25rem;
+    }
+
+    .post-body {
+        font-size: 0.95rem;
+    }
+
+    main#blog-list img,
+    .post img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    #back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
 }
