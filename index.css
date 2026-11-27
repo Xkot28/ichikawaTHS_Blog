@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -42,6 +43,77 @@ h2 {
     color: #1a2a6c;
     border-bottom: 3px solid #1a2a6c;
     padding-bottom: 10px;
+}
+
+/* タイムライン全体の枠組み */
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 60px auto;
+    padding-left: 100px; /* 太い矢印を置くための左スペースを広く確保 */
+    padding-bottom: 50px; /* 矢印の先端がはみ出す分の余白 */
+}
+
+/* 太い矢印の軸（ボディ部分） */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px; /* 左から20pxの位置に配置 */
+    width: 36px; /* ★矢印の横幅を広くする */
+    height: 100%;
+    background: #1a2a6c; /* サイトカラーの紺色で塗りつぶし */
+    border-radius: 4px 4px 0 0;
+    z-index: 0;
+}
+
+/* 矢印の先端（大きな三角形） */
+.timeline::after {
+    content: '';
+    position: absolute;
+    bottom: -36px; /* 軸の下に配置 */
+    left: 8px; /* 軸の中心にぴったり合わせる */
+    border-width: 36px 30px 0 30px; /* 大きな下向き三角形 */
+    border-style: solid;
+    border-color: #1a2a6c transparent transparent transparent;
+    z-index: 0;
+}
+
+/* 各予定のブロック */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* ★太い矢印の中に入る点（ドット） */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 25px; /* コンテンツの高さに合わせて上下位置を調整 */
+    left: -70px; /* ★太い矢印のど真ん中に点が来るように計算された位置 */
+    width: 16px; /* 点の大きさ */
+    height: 16px;
+    border-radius: 50%;
+    background: #fdbb2d; /* 目立つように黄色を使用 */
+    border: 2px solid white; /* 点の周りに白い縁取りを入れてより綺麗に */
+    z-index: 1; /* 矢印より手前（上）に表示 */
+}
+
+/* 日付の文字スタイル */
+.timeline-date {
+    font-weight: bold;
+    color: #1a2a6c;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+/* 予定内容の枠スタイル */
+.timeline-content {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 /* Blog Specific Styles */
@@ -187,6 +259,29 @@ main#blog-list img {
 /* Overwrite for blog index.html from build_blog.py*/
 .post-body { white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }
 
+/* Scroll-driven Fade-in (Overall Application) */
+main > h2,
+main > p,
+.timeline-item,
+main#blog-list > article,
+.fade-in {
+    /* スクロールに合わせてアニメーションさせる設定 */
+    animation: fadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
@@ -256,6 +351,34 @@ main#blog-list img {
         font-size: 0.95rem;
     }
 
+    .timeline {
+        margin: 40px auto;
+        padding-left: 72px;
+    }
+
+    .timeline::before {
+        left: 14px;
+        width: 28px;
+    }
+
+    .timeline::after {
+        bottom: -28px;
+        left: 4px;
+        border-width: 28px 24px 0 24px;
+    }
+
+    .timeline-item::before {
+        left: -58px;
+        top: 22px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .timeline-date {
+        font-size: 1.05rem;
+    }
+
+    main img,
     main#blog-list img,
     .post img {
         max-width: 100%;
